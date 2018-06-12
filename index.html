@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <button>Carregar</button>
+  <form id="formVimeo">
+    <input type="file" id="farquivo" />
+  </form>
+  <script src="app.js"></script>
+  <script>
+    var vimeo = new VimeoUploader();
+    let ffile = document.querySelector("#farquivo");
+    ffile.addEventListener('change', (event) => {
+      vimeo.uploadVideo().then((response) => {
+        console.log(response);
+      })
+    });
+  </script>
+</body>
+</html>
